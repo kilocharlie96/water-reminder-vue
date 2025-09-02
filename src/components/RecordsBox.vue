@@ -1,4 +1,5 @@
 <template>
+    <p>Dnes si vypil {{ actual }} L vody.</p>
     <new-record-form></new-record-form>
     <ul>
         <li v-for="(waterRecord, index) in drinkingRecords" :key="index">
@@ -15,6 +16,14 @@
         components: {
             NewRecordForm,
             DrinkingRecord
+        },
+
+        data() {
+            return {
+                drinkingRecords: [],
+                dailyGoal: 0,
+                actual: 0,
+            }
         }
         
     }
