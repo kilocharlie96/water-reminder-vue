@@ -1,0 +1,123 @@
+:root {
+    --var--color-bg-gradient: oklch(0.8947 0.0604 227.77), oklch(0.6029 0.1466 243.46);
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-image: linear-gradient(
+        to right,
+        var(--var--color-bg-gradient)
+    );
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+#app {
+    width: 20rem;
+    height: 36rem;
+
+    border: 2px solid black;
+    border-radius: 0.75rem;
+
+    background: #fff;
+
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+div.warning {
+    background: orange;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+div.warning p {
+    margin: 0.25rem 0;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+main {
+    margin: 2rem 0;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+    max-height: 160px;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+article {
+    background-image: linear-gradient(
+    to left,
+    var(--var--color-bg-gradient)
+    );
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 0.5rem;
+}
+ article h1 {
+    font-size: 1.5rem;
+ }
+
+ p {
+    margin: 0.5rem 0;
+ }
+
+.danger {
+    background: red;
+}
+
+label, select, button {
+    display: block;
+
+    margin: 0.75rem 0;
+}
+
+select {
+    font-size: 1.25rem;
+}
+
+option {
+    font-size: 1rem;
+}
+
+#counter {
+    font-size: 2rem;
+}
+
+input#consumed-water {
+    width: 20%;
+}
+
+a#link {
+    text-decoration: none;
+    font-weight: 500
+}
+
+a#link:hover, a#link:active {
+    /* text-shadow: 0.01rem 0.01rem 0.01rem black; */
+    font-weight: bold;
+    text-decoration: underline;
+}
