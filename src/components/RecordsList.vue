@@ -8,7 +8,14 @@
 </template>
 
 <script>
+    import NewRecordForm from './NewRecordForm.vue';
+    import DrinkingRecord from './DrinkingRecord.vue';
+
     export default {
+        components: {
+            NewRecordForm,
+            DrinkingRecord
+        }
         
     }
 </script>

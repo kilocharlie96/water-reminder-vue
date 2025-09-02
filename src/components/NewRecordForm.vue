@@ -1,5 +1,9 @@
 <template>
-
+    <h3>Pridaj nový záznam</h3>
+    <form @submit.prevent="addRecord">
+        <input type="number" step="0.1" v-model="newRecord" autofocus> litrov
+        <button type="submit">Pridať</button>
+    </form>
 </template>
 
 <script>
