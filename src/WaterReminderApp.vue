@@ -1,7 +1,7 @@
 <template>
     <header-vue></header-vue>
     <daily-goal v-if="!isGoalSet" @goal-is-set="isGoalSet = true"></daily-goal>
-    <records-box v-if="isGoalSet"></records-box>
+    <records-container v-if="isGoalSet"></records-container>
 
     <footer>
         <p>Created by <a id="link" href="https://github.com/kilocharlie96/water-reminder/">KiloCharlie96</a>.</p>
@@ -11,13 +11,13 @@
 <script>
 import HeaderVue from './components/Header-Vue.vue';
 import DailyGoal from './components/DailyGoal.vue';
-import RecordsBox from './components/RecordsBox.vue';
+import RecordsContainer from './components/RecordsContainer.vue';
 
     export default {
         components: {
             HeaderVue,
             DailyGoal,
-            RecordsBox,
+            RecordsContainer,
         },
 
         data() {
