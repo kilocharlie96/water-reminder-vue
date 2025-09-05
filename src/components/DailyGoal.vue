@@ -35,7 +35,7 @@
         }, 
         methods: {
             setGoal(){
-                this.$emit('goal-is-set')
+                this.$emit('goal-is-set', this.dailyGoal)
             },
             countGoalByWeight() {
                 this.dailyGoal = Number(((this.bodyWeight / 15) * 0.5).toFixed(1));

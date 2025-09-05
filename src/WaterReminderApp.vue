@@ -1,7 +1,7 @@
 <template>
     <header-vue></header-vue>
-    <daily-goal v-if="!isGoalSet" @goal-is-set="isGoalSet = true"></daily-goal>
-    <records-container v-if="isGoalSet"></records-container>
+    <daily-goal v-if="!isGoalSet" @goal-is-set="isGoalSet = true, presetGoal= $event"></daily-goal>
+    <records-container v-if="isGoalSet" :presetGoal="presetGoal"></records-container>
 
     <footer>
         <p>Created by <a id="link" href="https://github.com/kilocharlie96/water-reminder/">KiloCharlie96</a>.</p>
@@ -22,6 +22,7 @@ import RecordsContainer from './components/RecordsContainer.vue';
 
         data() {
             return {
+                presetGoal: 0.0,
                 isGoalSet: false,
             }
         },
