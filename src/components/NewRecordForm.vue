@@ -1,6 +1,6 @@
 <template>
-    <h3>Pridaj nový záznam</h3>
     <form @submit.prevent="submitRecord">
+        <label>Pridaj nový záznam</label>
         <input type="number" step="0.1" v-model="waterAmount" autofocus> litrov
     </form>
     <p>{{ waterAmount }}</p>

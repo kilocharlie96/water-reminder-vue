@@ -1,6 +1,6 @@
 <template>
-    <h3>Aký je tvoj dnešný cieľ?</h3>
     <form @submit.prevent="setGoal">
+        <label>Aký je tvoj dnešný cieľ?</label>
         <input type="number" step="0.1" v-model="dailyGoal" autofocus> litrov
     </form>
 
@@ -15,8 +15,8 @@
 
     <weight-form :class="{ hidden: weightSet == true }">
         <p>Ak chceš, pomôžem Ti orientačne vypočítať optimálnu denú dávku vody podľa tvojej váhy.</p>
-        <h3>Aká je tvoja váha?</h3>
         <form @submit.prevent="setGoal">
+            <label>Aká je tvoja váha?</label>
             <input @input="countGoalByWeight" type="number" v-model="bodyWeight"> kg.
         </form>
     </weight-form>
