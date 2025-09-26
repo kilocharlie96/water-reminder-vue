@@ -6,7 +6,7 @@
 
     <recommended-amount>
         <small>
-            <p>Odporúčaná denná dávka je od 2 do 3 litrov vody. Presnejšie 0,5 litra na každých 15 kg hmotnosti.</p>
+            <p>Odporúčaná denná dávka je od 2 do 4 litrov vody. Presnejšie 0,5 litra na každých 15 kg hmotnosti.</p>
             <p>To znamená, že človek s hmotnosťou 80 kg by mal vypiť cca 2,5l tekutín denne.</p>
             <p><em>Uvádzané pre optimálnu dennú záťaž. Teda bez športových aktivít, bez vonkajších tropických teplôt, ...</em></p>
         </small>

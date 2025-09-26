@@ -1,11 +1,11 @@
 <template>
-    <article>
+    <saved-record>
         <h1>{{ waterAmount }} L</h1>
         <p>Stav vypitej vody pred záznamom: {{ litresTotalDay }} L</p>
         <p>Stav vypitej vody vrátane záznamu: {{ litresTotalNow }} L</p>
         <p>Čas: {{ time }}</p>
         <p>{{ remainingToTarget }}</p>
-    </article>
+    </saved-record>
 </template>
 
 <script>
@@ -29,7 +29,3 @@
         }
     }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

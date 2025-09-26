@@ -1,10 +1,9 @@
 <template>
     <transition name="slide-right">
-        <div class="warning" v-if="isVisible">
+        <article class="warning" v-if="isVisible">
+            <p>Táto aplikácia slúži ako prezentácia mojich znalostí so zameraním na <strong>Vue.js</strong>. Stále na nej pracujem, preto môže obsahovať chyby a nemusí fungovať správne.</p>
             <button class="close" @click="hideElement">X</button>
-            <p>Táto aplikácia slúži ako prezentácia mojich znalostí so zameraním na <strong>Vue.js</strong>.</p>
-            <p>Stále na nej pracujem, preto môže obsahovať chyby a nemusí fungovať správne.</p>
-        </div>
+        </article>
     </transition>
     
     <header>
