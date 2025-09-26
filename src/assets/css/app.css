@@ -52,7 +52,7 @@ body {
     margin-bottom: 1rem;
 }
 
-p {
+.warning p {
     margin: 0.5rem 0;
     padding: 0 1rem;
 }
