@@ -1,26 +1,17 @@
 <template>
-    <form @submit.prevent="setGoal">
-        <label>Aký je tvoj dnešný cieľ?</label>
-        <input type="number" step="0.1" v-model="dailyGoal" autofocus> litrov
-    </form>
+  <recommended-amount>
+    <small>
+      <div v-for="(p, i) in paragraphs" :key="i">
+        <button @click="toggle(i)">
+          {{ opened === i ? "−" : "+" }} Koľko vody
+        </button>
 
-    <recommended-amount>
-        <small>
-            <p>Odporúčaná denná dávka je od 2 do 4 litrov vody. Presnejšie 0,5 litra na každých 15 kg hmotnosti.</p>
-            <p>To znamená, že človek s hmotnosťou 80 kg by mal vypiť cca 2,5l tekutín denne.</p>
-            <p><em>Uvádzané pre optimálnu dennú záťaž. Teda bez športových aktivít, bez vonkajších tropických teplôt, ...</em></p>
-        </small>
-    </recommended-amount>
-
-
-    <weight-form :class="{ hidden: weightSet == true }">
-        <p>Ak chceš, pomôžem Ti orientačne vypočítať optimálnu denú dávku vody podľa tvojej váhy.</p>
-        <form @submit.prevent="setGoal">
-            <label>Aká je tvoja váha?</label>
-            <input @input="countGoalByWeight" type="number" v-model="bodyWeight"> kg.
-        </form>
-    </weight-form>
-    
+        <transition name="accordion">
+          <p v-if="opened === i">{{ p }}</p>
+        </transition>
+      </div>
+    </small>
+  </recommended-amount>
 </template>
 
 <script>
@@ -30,10 +21,19 @@
                 dailyGoal: 0.0,
                 bodyWeight: 0,
                 goalByWeight: 0,
-                weightSet: false
+                weightSet: false,
+                opened: null,
+                paragraphs: [
+                    "Odporúčaná denná dávka je od 2 do 4 litrov vody. Presnejšie 0,5 litra na každých 15 kg hmotnosti.",
+                    "To znamená, že človek s hmotnosťou 80 kg by mal vypiť cca 2,5l tekutín denne.",
+                    "Uvádzané pre optimálnu dennú záťaž. Teda bez športových aktivít, bez vonkajších tropických teplôt, ..."
+                ]
             }
         }, 
         methods: {
+            toggle(i) {
+            this.opened = this.opened === i ? null : i
+            },
             setGoal(){
                 this.$emit('goal-is-set', this.dailyGoal)
             },
@@ -44,4 +44,15 @@
     }
 </script>
 
-<style lang="scss" scoped></style>
+<style>
+    .accordion-enter-active,
+    .accordion-leave-active {
+    transition: all 0.3s ease;
+    }
+    .accordion-enter-from,
+    .accordion-leave-to {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    }
+</style>
